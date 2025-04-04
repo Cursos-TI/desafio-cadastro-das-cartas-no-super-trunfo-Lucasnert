@@ -10,6 +10,13 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     float area1, area2; // Declara uma variável de ponto flutuante, vai receber a área referente a cidade
     float pib1, pib2; // Declara uma variável de ponto flutuante, vai receber o PIB da cidade
     int numpt1, numpt2; // Declara uma variável inteira, vai receber o número de pontos turísticos
+    float densdemo1, densdemo2; // Declara uma de ponto flutuante, vai calcular a densidade demográfica das cidades;
+    float rendaper1, rendaper2; // Declara uma de ponto flutuante, vai calcular a renda percápita das cidades;
+
+    densdemo1 = pop1/area1; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
+    densdemo2 = pop2/area2; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
+    rendaper1 = pib1/pop1; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
+    rendaper2 = pib2/pop2; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
     
     /* O programa vai ser dividido na captação de informações da primeira carta, na sequência da segunda e por fim 
     apresentar a informação das duas caras*/
@@ -83,24 +90,28 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     scanf("%d", &numpt2);
 
     /* Impressão das informações das primeira e segunda carta respectivamente*/
-
+    
     printf("\n\n\nCarta número %d", carta1);
     printf("\nEstado %s", estado1);
     printf("\nCódigo %s", cod1);
     printf("\nO nome da cidade é: %s", nome1);
     printf("\nO número da população é de: %f", pop1);
-    printf("\nA área total é de: %f m²", area1);
-    printf("\nO PIB da cidade é de: %f bilhões de reais", pib1);
+    printf("\nA área total é de: %.2f m²", area1);
+    printf("\nO PIB da cidade é de: %.2f de reais", pib1);
     printf("\nO número de pontos turísticos é %d", numpt1);
+    printf("\nA densidade demográfica de %s é %.2f Hab/m²", nome1, densdemo1);
+    printf("\nA renda percápita de %s é de: %.2f R$/Hab", nome1, rendaper1);
 
     printf("\n\n\nCarta número %d", carta2);
     printf("\nEstado %s", estado2);
     printf("\nCódigo %s", cod2);
     printf("\nO nome da cidade é: %s", nome2);
-    printf("\nO número da população é de: %f", pop2);
-    printf("\nA área total é de: %f m²", area2);
-    printf("\nO PIB da cidade é de: %f bilhões de reais", pib2);
+    printf("\nO número da população é de: %.2f", pop2);
+    printf("\nA área total é de: %.2f m²", area2);
+    printf("\nO PIB da cidade é de: R$%.2f de reais", pib2);
     printf("\nO número de pontos turísticos é %d", numpt2);
+    printf("\nA densidade demográfica de %s é %.2f Hab/Km²", nome2, densdemo2);
+    printf("\nA renda percápita de %s é de: %.2f R$/Hab", nome2, rendaper2);
 
     return 0;
     }
