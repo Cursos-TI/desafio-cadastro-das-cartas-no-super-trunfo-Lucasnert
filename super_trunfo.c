@@ -12,11 +12,6 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     int numpt1, numpt2; // Declara uma variável inteira, vai receber o número de pontos turísticos
     float densdemo1, densdemo2; // Declara uma de ponto flutuante, vai calcular a densidade demográfica das cidades;
     float rendaper1, rendaper2; // Declara uma de ponto flutuante, vai calcular a renda percápita das cidades;
-
-    densdemo1 = pop1/area1; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
-    densdemo2 = pop2/area2; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
-    rendaper1 = pib1/pop1; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
-    rendaper2 = pib2/pop2; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
     
     /* O programa vai ser dividido na captação de informações da primeira carta, na sequência da segunda e por fim 
     apresentar a informação das duas caras*/
@@ -89,6 +84,10 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     printf("Digite o número de pontos turísticos: \n");
     scanf("%d", &numpt2);
 
+    densdemo1 = pop1/area1; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
+    densdemo2 = pop2/area2; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
+    rendaper1 = pib1/pop1; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
+    rendaper2 = pib2/pop2; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
     /* Impressão das informações das primeira e segunda carta respectivamente*/
     
     printf("\n\n\nCarta número %d", carta1);
