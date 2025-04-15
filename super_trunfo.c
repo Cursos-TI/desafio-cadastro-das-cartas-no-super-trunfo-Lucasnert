@@ -1,6 +1,7 @@
 #include <stdio.h> //Inclui uma biblioteca de entrada e saída, necessaria para usar a função printf
-
-int main () { //Todo programa em C coemça com a função main. É a partir daqui que inicia a execução
+#include <locale.h>
+int main () { //Todo programa em C começa com a função main. É a partir daqui que inicia a execução
+    setlocale(LC_ALL, "Portuguese_Brazil");
 
     int carta1, carta2; // Declara variáveis inteiras que irão receber a numeração das cartas
     char estado1[15], estado2[15]; // Declara uma variável do tipo caractere, essas variáveis receberão o nome dos estados
@@ -12,7 +13,7 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     int numpt1, numpt2; // Declara uma variável inteira, vai receber o número de pontos turísticos
     float densdemo1, densdemo2; // Declara uma de ponto flutuante, vai calcular a densidade demográfica das cidades;
     float rendaper1, rendaper2; // Declara uma de ponto flutuante, vai calcular a renda percápita das cidades;
-    
+    int escolha;
     /* O programa vai ser dividido na captação de informações da primeira carta, na sequência da segunda e por fim 
     apresentar a informação das duas caras*/
 
@@ -88,17 +89,215 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     densdemo2 = pop2/area2; //A renda percápita é calculada através da divisão entre o número da população pela área total da cidade
     rendaper1 = pib1/pop1; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
     rendaper2 = pib2/pop2; //A densidade demográfica é calculada através da divisão entre o número do PIB pela quantidade de habitantes
-    /* Impressão das informações das primeira e segunda carta respectivamente*/
+    
+
+    printf("Qual atributo você gostaria de comparar?\n\n");
+    printf("1 - População\n");
+    printf("2 - Área\n");
+    printf("3 - PIB\n");
+    printf("4 - Nº de Pontos Turísticos\n");
+    printf("5 - Densidade Demográfica\n");
+    printf("6 - Renda Percápita\n\n");
+    scanf("%d", &escolha);
+
+    if (escolha == 1){
+        printf("\nO atributo escolhido foi: População.");
+        if (pop1 > pop2){
+        
+        printf("O código da Carta 1 é %d\n", carta1);
+        printf("O estado é %s\n", estado1);
+        printf("A cidade é %s\n", nome1);
+        printf("A população da Carta 1 é de %.2f habitantes\n", pop1);
+        
+        printf("O código da Carta 2 é %d\n", carta2);
+        printf("O estado é %s\n", estado2);
+        printf("A cidade é %s\n", nome2);
+        printf("A população da Carta 2 é de %.2f habitantes\n", pop2);
+                
+        printf("A Carta 1 Venceu!");
+        }
+        else{ 
+        printf("O código da Carta 1 é %d\n", carta1);
+        printf("O estado é %s\n", estado1);
+        printf("A cidade é %s\n", nome1);
+        printf("A população da Carta 1 é de %.2f habitantes\n", pop1);
+        
+        printf("O código da Carta 2 é %d\n\n", carta2);
+        printf("O estado é %s\n", estado2);
+        printf("A cidade é %s\n", nome2);
+        printf("A população da Carta 2 é de %.2f habitantes\n\n", pop2);
+        printf("A Carta 2 Venceu!");
+        }
+        }
+    else {
+        if (escolha == 2){
+        printf("\nO atributo escolhido foi Área.");
+            if (area1 > area2){
+        
+            printf("O código da Carta 1 é %d\n", carta1);
+            printf("O estado é %s\n", estado1);
+            printf("A cidade é %s\n", nome1);
+            printf("A área da Carta 1 é de %.2f m²\n\n", area1);
+                
+            printf("O código da Carta 2 é %d\n", carta2);
+            printf("O estado é %s\n", estado2);
+            printf("A cidade é %s\n", nome2);
+            printf("A área da Carta 2 é de %.2f m²\n\n", area2);
+                        
+            printf("A Carta 1 Venceu!\n");
+            }
+            else{ 
+            printf("O código da Carta 1 é %d\n", carta1);
+            printf("O estado é %s\n", estado1);
+            printf("A cidade é %s\n", nome1);
+            printf("A área da Carta 1 é de %.2f m²\n\n", area1);
+                
+            printf("O código da Carta 2 é %d\n", carta2);
+            printf("O estado é %s\n", estado2);
+            printf("A cidade é %s\n", nome2);
+            printf("A área da Carta 2 é de %.2f m²\n\n", area2);
+            printf("A Carta 2 Venceu!\n");
+            }
+            }
+        else {              
+            if (escolha == 3){
+                printf("\nO atributo escolhido foi: PIB.\n");
+            if (pib1 > pib2){
+        
+                printf("O código da Carta 1 é %d\n", carta1);
+                printf("O estado é %s\n", estado1);
+                printf("A cidade é %s\n", nome1);
+                printf("O PIB da Carta 1 é de %.2f R$/Hab\n\n", pib1);
+                
+                printf("O código da Carta 2 é %d\n", carta2);
+                printf("O estado é %s\n", estado2);
+                printf("A cidade é %s\n", nome2);
+                printf("O PIB da Carta 2 é de %.2f R$/Hab²\n\n", pib2);
+                        
+                printf("A Carta 1 Venceu!\n");
+            }
+            else{ 
+                printf("O código da Carta 1 é %d\n", carta1);
+                printf("O estado é %s\n", estado1);
+                printf("A cidade é %s\n", nome1);
+                printf("O PIB da Carta 1 é de %.2f R$/Hab\n\n", pib1);
+                    
+                printf("O código da Carta 2 é %d\n", carta2);
+                printf("O estado é %s\n", estado2);
+                printf("A cidade é %s\n", nome2);
+                printf("O PIB da Carta 2 é de %.2f R$/Hab²\n\n", pib2);
+
+                printf("A Carta 2 Venceu!\n");
+                } 
+            }      
+            else {
+            
+                if (escolha == 4){
+                printf("\nO atributo escolhido foi: Nº de Pontos Turísticos.\n\n");
+                    if (numpt1 > numpt2){
+        
+                    printf("O código da Carta 1 é %d\n", carta1);
+                    printf("O estado é %s\n", estado1);
+                    printf("A cidade é %s\n", nome1);
+                    printf("O Nº de Pontos Turísticos da Carta 1 é de %d\n\n", numpt1);
+                
+                    printf("O código da Carta 2 é %d\n", carta2);
+                    printf("O estado é %s\n", estado2);
+                    printf("A cidade é %s\n", nome2);
+                    printf("O Nº de Pontos Turísticos da Carta 2 é de %d\n\n", numpt2);
+                        
+                    printf("A Carta 1 Venceu!\n");
+                    }
+                    else{ 
+                    printf("O código da Carta 1 é %d\n", carta1);
+                    printf("O estado é %s\n", estado1);
+                    printf("A cidade é %s\n", nome1);
+                    printf("O Nº de Pontos Turísticos da Carta 1 é %d\n\n", numpt1);
+                
+                    printf("O código da Carta 2 é %d\n", carta2);
+                    printf("O estado é %s\n", estado2);
+                    printf("A cidade é %s\n", nome2);
+                    printf("O Nº de Pontos Turísticos da Carta 2 é %d\n\n", numpt2);
+
+                    printf("A Carta 2 Venceu!\n");
+                    }  
+                }
+                else {
+                    if (escolha == 5){
+                    printf("\nO atributo escolhido foi: Densidade Demográfica.\n\n");
+                        if (densdemo1 > densdemo2){
+                
+                        printf("O código da Carta 1 é %d\n", carta1);
+                        printf("O estado é %s\n", estado1);
+                        printf("A cidade é %s\n", nome1);
+                        printf("A densidade demográfica da Carta 1 é de %.2f\n\n", densdemo1);
+                        
+                        printf("O código da Carta 2 é %d\n", carta2);
+                        printf("O estado é %s\n", estado2);
+                        printf("A cidade é %s\n", nome2);
+                        printf("A densidade demográfica da Carta 2 é de %.2f\n\n", densdemo2);
+                                
+                        printf("A Carta 1 Venceu!\n");
+                        }
+                        else{ 
+                        printf("O código da Carta 1 é %d\n", carta1);
+                        printf("O estado é %s\n", estado1);
+                        printf("A cidade é %s\n", nome1);
+                        printf("A densidade demográfica da Carta 1 é de %.2f Hab/km²\n\n", densdemo1);
+                            
+                        printf("O código da Carta 2 é %d\n", carta2);
+                        printf("O estado é %s\n", estado2);
+                        printf("A cidade é %s\n", nome2);
+                        printf("A densidade demográfica da Carta 2 é de %.2f Hab/Km²\n\n", densdemo2);
+        
+                        printf("A Carta 2 Venceu!\n");    
+                        }                    
+                    }
+                    else {
+                        if (escolha == 6){
+                        printf("\nO atributo escolhido foi: Renda per Cápita.\n\n");
+                            if (rendaper1 > rendaper2){
+                        
+                            printf("O código da Carta 1 é %d\n", carta1);
+                            printf("O estado é %s\n", estado1);
+                            printf("A cidade é %s\n", nome1);
+                            printf("A renda per cápita da Carta 1 é de %.2fR$/Hab\n\n", rendaper1);
+                                
+                            printf("O código da Carta 2 é %d\n", carta2);
+                            printf("O estado é %s\n", estado2);
+                            printf("A cidade é %s\n", nome2);
+                            printf("A renda per cápita da Carta 2 é de %.2fR$/Hab\n\n", rendaper2);
+                                        
+                            printf("A Carta 1 Venceu!\n");
+                            }
+                            else{ 
+                            printf("O código da Carta 1 é %d\n", carta1);
+                            printf("O estado é %s\n", estado1);
+                            printf("A cidade é %s\n", nome1);
+                            printf("A renda per cápita da Carta 1 é de %.2fR$/Hab\n\n", rendaper1);
+                                    
+                            printf("O código da Carta 2 é %d\n", carta2);
+                            printf("O estado é %s\n", estado2);
+                            printf("A cidade é %s\n", nome2);
+                            printf("A renda per cápita da Carta 2 é de %.2fR$/Hab\n\n", rendaper2);
+                
+                            printf("A Carta 2 Venceu!\n");    
+                            }                    
+                        }        
+                    }
+                }
+            }
+        }   
     
     printf("\n\n\nCarta número %d", carta1);
     printf("\nEstado %s", estado1);
     printf("\nCódigo %s", cod1);
     printf("\nO nome da cidade é: %s", nome1);
     printf("\nO número da população é de: %f", pop1);
-    printf("\nA área total é de: %.2f m²", area1);
+    printf("\nA área total é de: %.2f Km²", area1);
     printf("\nO PIB da cidade é de: %.2f de reais", pib1);
     printf("\nO número de pontos turísticos é %d", numpt1);
-    printf("\nA densidade demográfica de %s é %.2f Hab/m²", nome1, densdemo1);
+    printf("\nA densidade demográfica de %s é %.2f Hab/Km²", nome1, densdemo1);
     printf("\nA renda percápita de %s é de: %.2f R$/Hab", nome1, rendaper1);
 
     printf("\n\n\nCarta número %d", carta2);
@@ -106,11 +305,10 @@ int main () { //Todo programa em C coemça com a função main. É a partir daqu
     printf("\nCódigo %s", cod2);
     printf("\nO nome da cidade é: %s", nome2);
     printf("\nO número da população é de: %.2f", pop2);
-    printf("\nA área total é de: %.2f m²", area2);
+    printf("\nA área total é de: %.2f Km²", area2);
     printf("\nO PIB da cidade é de: R$%.2f de reais", pib2);
     printf("\nO número de pontos turísticos é %d", numpt2);
     printf("\nA densidade demográfica de %s é %.2f Hab/Km²", nome2, densdemo2);
     printf("\nA renda percápita de %s é de: %.2f R$/Hab", nome2, rendaper2);
-
-    return 0;
-    }
+}
+}
